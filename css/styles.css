@@ -1,0 +1,60 @@
+/** Generic CSS goes first. This CSS applies to all screens widths unless overwritten in a media query below. */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+ul { 
+    padding: 0; 
+    margin:0;
+}
+
+.a,
+.b,
+.c {
+    font-size: 4.5rem; /**72px**/
+    padding: 1.25rem; /**20px**/
+    background-color: #a91b0d;
+    /** viewport units represent a percentage of the current browser viewport **/
+    width: 100vw;
+    /** using calc() is better than using percentages because it avoids rounding issues (100% / 3 = 33.333333% **/
+    height: calc(100vh / 3);
+}
+
+.b {
+    background-color: #fe9547;
+}
+.c {
+    background-color: #fed547;
+}
+
+/** Media queries specify a min-width as a condition and those styles are applied at that screen-width and above **/
+
+@media screen and (min-width: 800px) {
+    .a {
+        background-color: #39d339;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .b {
+        background-color: #3999d3
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .c {
+        background-color: #a543e8;
+    }
+
+    .a,
+    .b,
+    .c {
+        width: 75vw;
+        margin: 0 auto;
+    }
+}
